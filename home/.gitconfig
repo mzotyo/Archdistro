@@ -1,0 +1,5 @@
+[user]
+	name = John Doe
+	email = asghtr@freemail.com
+[core]
+	editor = vim
