@@ -43,7 +43,7 @@ mkdir -p -v $ETC
 echo 'root:x:0:0::/root:/bin/bash' > $ETC/passwd
 
 # file: /etc/shadow
-echo 'root::19166::::::' > $ETC/shadow
+echo 'root:$6$Oj.cp2XlRP3ujoD1$o7Sg8b8sSmegMxTssGfkSYgpxhM4rXQedbyhzqir2cPsnnU3YaVrD1YAYhm3eFpWWgO.eivX3rAulk5dfzvu9.:19166::::::' > $ETC/shadow
 
 # file: /etc/group
 echo 'root:x:0:root' > $ETC/group

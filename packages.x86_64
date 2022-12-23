@@ -1,6 +1,7 @@
 
 networkmanager
 reflector
+openssl
 
 htop
 vim
