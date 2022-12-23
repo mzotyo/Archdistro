@@ -40,20 +40,25 @@ ETC=$ROOT/etc
 mkdir -p -v $ETC
 
 # file: /etc/passwd
-echo 'root:x:0:0::/root:/bin/bash' > $ETC/passwd
+echo 'root:x:0:0::/root:/bin/bash'             > $ETC/passwd
+echo 'live:x:1000:1000::/home/live:/bin/bash' >> $ETC/passwd
 
 # file: /etc/shadow
 echo 'root:$6$Oj.cp2XlRP3ujoD1$o7Sg8b8sSmegMxTssGfkSYgpxhM4rXQedbyhzqir2cPsnnU3YaVrD1YAYhm3eFpWWgO.eivX3rAulk5dfzvu9.:19166::::::' > $ETC/shadow
+echo 'live:$6$x2vu6h4dqs0Fw628$LEciKc8.hOjyLfDMpZPU2Ddk5rRe.h8uvTIgoN1L3WzoTkvbnIF7rvSW5pvXoUp8DbuA6VuCPBDZZyC1mhgcH0:19166::::::' >> $ETC/shadow
 
 # file: /etc/group
-echo 'root:x:0:root' > $ETC/group
+echo 'root:x:0:root'  > $ETC/group
+echo 'live:x:1000:'  >> $ETC/group
 echo 'vboxsf:x:109:' >> $ETC/group
 
 # file: /etc/gshadow
-echo 'root:::root' > $ETC/gshadow
+echo 'root:!*::root' > $ETC/gshadow
+echo 'root:!*::'    >> $ETC/gshadow
 
 # file: /etc/sudoers
-echo 'root ALL=(ALL:ALL) ALL' > $ETC/sudoers
+echo 'root ALL=(ALL:ALL) ALL'    > $ETC/sudoers
+echo '%sudo ALL=(ALL:ALL) ALL'  >> $ETC/sudoers
 
 # ------------------------------------------------------------------------------
 # profile.sh
