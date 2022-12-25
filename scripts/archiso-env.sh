@@ -69,7 +69,7 @@ KNOWN_HOSTS="\[\"\/root\/.ssh\/known_hosts\"\]=\"0:0:600\""
 ARCHISO_ENV="\[\"\/root\/Archdistro\/scripts\/archiso-env.sh\"\]=\"0:0:750\""
 BUILD_ARCHISO="\[\"\/root\/Archdistro\/scripts\/build.sh\"\]=\"0:0:750\""
 KEYRING_RESTORE="\[\"\/root\/Archdistro\/scripts\/keyring.sh\"\]=\"0:0:750\""
-RESIZE_LIVE="\[\"\/root\/Archdistro\/scripts\/resize-live.sh\"\]=\"0:0:750\""
+RESIZE_LIVE="\[\"\/root\/Archdistro\/scripts\/remount.sh\"\]=\"0:0:750\""
 
 sed -i "s/  $SHADOW/\
 \t$SHADOW\n\
