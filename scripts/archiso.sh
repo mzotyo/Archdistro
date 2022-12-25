@@ -110,13 +110,12 @@ cp $ARCHDISTRO/home/.xinitrc $HOME_ROOT
 # ------------------------------------------------------------------------------
 # Build ISO
 # ------------------------------------------------------------------------------
-mkdir -p -v $ARCH_LIVE/{out,work}
-
 BUILD_SCRIPT=$ARCHDISTRO/scripts/build.sh
-$BUILD_SCRIPT
+$BUILD_SCRIPT $ARCH_LIVE $ORIGINAL_PATH
 
 # ------------------------------------------------------------------------------
 # Remove baseline
 # ------------------------------------------------------------------------------
 pacman -Rns archiso --noconfirm
+rm -r $ARCH_LIVE
 cd $ORIGINAL_PATH
