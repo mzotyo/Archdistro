@@ -97,6 +97,8 @@ cp $HOME_ROOT/.vim/.vimrc $HOME_ROOT
 mkdir -p -v $ETC/pacman.d
 reflector --age 3 --protocol https --save $ETC/pacman.d/mirrorlist
 
+cp $ARCHDISTRO/etc/default $ETC -r
+cp $ARCHDISTRO/etc/ufw $ETC -r
 cp $ARCHDISTRO/etc/locale.conf $ETC
 cp $ARCHDISTRO/etc/locale.gen $ETC
 cp $ARCHDISTRO/etc/vconsole.conf $ETC
@@ -108,6 +110,13 @@ cp $ARCHDISTRO/home/.gitconfig $HOME_ROOT
 cp $ARCHDISTRO/home/.xinitrc $HOME_ROOT
 
 # ------------------------------------------------------------------------------
+# Services
+# ------------------------------------------------------------------------------
+MULTI_USER_TARGET_WANTS=$ETC/systemd/system/multi-user.target.wants
+mkdir -p -v $MULTI_USER_TARGET_WANTS
+ln -s /usr/lib/systemd/system/ufw.service $MULTI_USER_TARGET_WANTS/ufw.service
+
+# ------------------------------------------------------------------------------
 # Build ISO
 # ------------------------------------------------------------------------------
 BUILD_SCRIPT=$ARCHDISTRO/scripts/build.sh
@@ -117,5 +126,5 @@ $BUILD_SCRIPT $ARCH_LIVE $ORIGINAL_PATH
 # Remove baseline
 # ------------------------------------------------------------------------------
 pacman -Rns archiso --noconfirm
-rm -r $ARCH_LIVE
+#rm -r $ARCH_LIVE
 cd $ORIGINAL_PATH

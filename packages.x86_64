@@ -2,6 +2,7 @@
 networkmanager
 reflector
 openssl
+ufw
 
 htop
 vim

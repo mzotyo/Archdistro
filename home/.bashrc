@@ -15,7 +15,7 @@ locale-gen 1> /dev/null 2> /dev/null
 remount 4G
 
 # Update arch linux keyrings
-keyring
+# keyring
 
 # Update linux system
 # sysupdate
