@@ -1,5 +1,6 @@
 # Create aliases for custom shorthand commands
 alias la="ls -hal"
+alias archiso="/root/Archdistro/scripts/archiso.sh"
 alias remount="/root/Archdistro/scripts/remount.sh"
 alias keyring="/root/Archdistro/scripts/keyring.sh"
 alias sysupdate="pacman -Syyu --noconfirm"
@@ -17,4 +18,4 @@ remount 4G
 keyring
 
 # Update linux system
-sysupdate
+# sysupdate

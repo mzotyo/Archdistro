@@ -66,7 +66,7 @@ ROOT_FOLDER="\[\"\/root\"\]=\"0:0:750\""
 SUDOERS="\[\"\/etc\/sudoers\"\]=\"0:0:440\""
 ID_RSA="\[\"\/root\/.ssh\/id_rsa\"\]=\"0:0:600\""
 KNOWN_HOSTS="\[\"\/root\/.ssh\/known_hosts\"\]=\"0:0:600\""
-ARCHISO_ENV="\[\"\/root\/Archdistro\/scripts\/archiso-env.sh\"\]=\"0:0:750\""
+ARCHISO_ENV="\[\"\/root\/Archdistro\/scripts\/archiso.sh\"\]=\"0:0:750\""
 BUILD_ARCHISO="\[\"\/root\/Archdistro\/scripts\/build.sh\"\]=\"0:0:750\""
 KEYRING_RESTORE="\[\"\/root\/Archdistro\/scripts\/keyring.sh\"\]=\"0:0:750\""
 RESIZE_LIVE="\[\"\/root\/Archdistro\/scripts\/remount.sh\"\]=\"0:0:750\""
@@ -111,7 +111,6 @@ cp $ARCHDISTRO/home/.xinitrc $HOME_ROOT
 # Build ISO
 # ------------------------------------------------------------------------------
 mkdir -p -v $ARCH_LIVE/{out,work}
-ln -s ~/Archdistro/scripts/archiso-env.sh $HOME_ROOT/archiso-env.sh
 
 BUILD_SCRIPT=$ARCHDISTRO/scripts/build.sh
 $BUILD_SCRIPT
