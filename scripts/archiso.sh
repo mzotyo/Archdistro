@@ -115,6 +115,7 @@ cp $ARCHDISTRO/home/.xinitrc $HOME_ROOT
 MULTI_USER_TARGET_WANTS=$ETC/systemd/system/multi-user.target.wants
 mkdir -p -v $MULTI_USER_TARGET_WANTS
 ln -s /usr/lib/systemd/system/ufw.service $MULTI_USER_TARGET_WANTS/ufw.service
+# cp $ARCHDISTRO/etc/systemd/system/multi-user.target.wants/pacman-init.service $ETC/systemd/system
 
 # ------------------------------------------------------------------------------
 # Build ISO

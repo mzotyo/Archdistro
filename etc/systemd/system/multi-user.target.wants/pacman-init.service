@@ -1,0 +1,11 @@
+[Unit]
+Description=Initialize Pacman keyring
+After=ufw.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pacman-key --init
+ExecStart=/usr/bin/pacman-key --populate
+
+[Install]
+WantedBy=multi-user.target
